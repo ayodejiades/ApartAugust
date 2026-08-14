@@ -1,0 +1,991 @@
+{
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "dtype": "float16",
+  "n_layers": 24,
+  "hs_indices": [
+    6,
+    12,
+    18,
+    24
+  ],
+  "relative_depths": {
+    "6": 0.25,
+    "12": 0.5,
+    "18": 0.75,
+    "24": 1.0
+  },
+  "n_per_cell": 30,
+  "seed": 0,
+  "token_lengths": {
+    "self_distress": {
+      "mean": 11.9,
+      "std": 1.619670748434179,
+      "min": 7,
+      "max": 15
+    },
+    "self_neutral": {
+      "mean": 9.8,
+      "std": 1.0132456102380443,
+      "min": 8,
+      "max": 12
+    },
+    "other_distress": {
+      "mean": 14.9,
+      "std": 1.619670748434179,
+      "min": 10,
+      "max": 18
+    },
+    "other_neutral": {
+      "mean": 12.8,
+      "std": 1.0132456102380443,
+      "min": 11,
+      "max": 15
+    },
+    "fict_distress": {
+      "mean": 17.9,
+      "std": 1.6196707484341792,
+      "min": 13,
+      "max": 21
+    },
+    "fict_neutral": {
+      "mean": 15.8,
+      "std": 1.0132456102380443,
+      "min": 14,
+      "max": 18
+    }
+  },
+  "personas": {
+    "default": {
+      "0.25": {
+        "relative_depth": 0.25,
+        "ceilings": {
+          "self": {
+            "r_half_mean": 0.8729075407981872,
+            "r_half_ci95": [
+              0.7742922008037567,
+              0.9229104027152062
+            ],
+            "ceiling_spearman_brown": 0.9321416266242117
+          },
+          "other": {
+            "r_half_mean": 0.8704364979267121,
+            "r_half_ci95": [
+              0.7817206054925918,
+              0.9309378013014793
+            ],
+            "ceiling_spearman_brown": 0.9307308736667068
+          },
+          "fict": {
+            "r_half_mean": 0.8616624772548676,
+            "r_half_ci95": [
+              0.7706906154751778,
+              0.9162912920117379
+            ],
+            "ceiling_spearman_brown": 0.9256914051632391
+          }
+        },
+        "cos_self_other": {
+          "mean": 0.7440885084867478,
+          "ci95": [
+            0.6982839271426201,
+            0.7878192573785782
+          ]
+        },
+        "delta_self_vs_other": {
+          "delta_mean": 0.13133194053173064,
+          "ci95": [
+            0.03520222306251526,
+            0.20879781693220134
+          ],
+          "significant": true,
+          "note": "within-frame split-half cos minus cross-frame cos; >0 excluding 0 => self-specific component"
+        },
+        "RSI_self_vs_other": {
+          "mean": 0.20059720704077313,
+          "ci95": [
+            0.15188137577898686,
+            0.25287746134583083
+          ],
+          "denominator": 0.9314359830546906
+        },
+        "RSI_null_within_self": {
+          "mean": 0.06128525852481865,
+          "ci95": [
+            0.007507005159134483,
+            0.15351363477064
+          ],
+          "min_detectable_rsi": 0.15351363477064
+        },
+        "cos_self_fict": {
+          "mean": 0.6986783612966537,
+          "ci95": [
+            0.6366970971226692,
+            0.7624915078282356
+          ]
+        },
+        "RSI_self_vs_fict": {
+          "mean": 0.24827433725198225,
+          "ci95": [
+            0.1812208856177766,
+            0.3181346779260392
+          ],
+          "denominator": 0.9289109172363699
+        },
+        "cos_other_fict": {
+          "mean": 0.7731902592182159,
+          "ci95": [
+            0.6927479937672615,
+            0.8430581599473953
+          ]
+        },
+        "cos_self_sentiment": 0.024462612345814705,
+        "cos_other_sentiment": 0.06222696602344513,
+        "residual": {
+          "residual_norm_fraction": 0.666851282119751,
+          "noise_floor_mean": 0.47835562482476235,
+          "noise_floor_ci95": [
+            0.3802599735558033,
+            0.6040175870060921
+          ],
+          "excess_over_floor": 0.18849565729498863
+        },
+        "self_report": {
+          "beta_shared": -0.016066858544945717,
+          "beta_selfspecific": 0.4011552631855011,
+          "r2": 0.15185900982424294,
+          "corr_rating_shared": 0.2741128470506993,
+          "corr_rating_selfspecific": 0.38953308741069476,
+          "mean_rating": 1.0372076034545898,
+          "sd_rating": 0.07803897559642792,
+          "note": "beta_selfspecific ~ 0 => self-reports track generic distress, not the self-specific component"
+        }
+      },
+      "0.5": {
+        "relative_depth": 0.5,
+        "ceilings": {
+          "self": {
+            "r_half_mean": 0.8805886900424957,
+            "r_half_ci95": [
+              0.799899822473526,
+              0.9225454851984978
+            ],
+            "ceiling_spearman_brown": 0.9365032287018562
+          },
+          "other": {
+            "r_half_mean": 0.8940706905722619,
+            "r_half_ci95": [
+              0.8299060076475143,
+              0.9357611700892449
+            ],
+            "ceiling_spearman_brown": 0.9440732017263129
+          },
+          "fict": {
+            "r_half_mean": 0.8866207131743431,
+            "r_half_ci95": [
+              0.8189378589391708,
+              0.9330164000391961
+            ],
+            "ceiling_spearman_brown": 0.9399035078784383
+          }
+        },
+        "cos_self_other": {
+          "mean": 0.7582499451041221,
+          "ci95": [
+            0.7174911677837372,
+            0.7910727262496948
+          ]
+        },
+        "delta_self_vs_other": {
+          "delta_mean": 0.12229228818416596,
+          "ci95": [
+            0.04904837012290955,
+            0.18647621870040892
+          ],
+          "significant": true,
+          "note": "within-frame split-half cos minus cross-frame cos; >0 excluding 0 => self-specific component"
+        },
+        "RSI_self_vs_other": {
+          "mean": 0.1933451927630859,
+          "ci95": [
+            0.1591081968852866,
+            0.23509211529766014
+          ],
+          "denominator": 0.94028059724084
+        },
+        "RSI_null_within_self": {
+          "mean": 0.062049891656622246,
+          "ci95": [
+            0.014050308329278127,
+            0.1404934648829825
+          ],
+          "min_detectable_rsi": 0.1404934648829825
+        },
+        "cos_self_fict": {
+          "mean": 0.5176302474737168,
+          "ci95": [
+            0.44547334462404253,
+            0.5923443630337715
+          ]
+        },
+        "RSI_self_vs_fict": {
+          "mean": 0.44831498424203403,
+          "ci95": [
+            0.3715240813218766,
+            0.5233912687747944
+          ],
+          "denominator": 0.9382018278581417
+        },
+        "cos_other_fict": {
+          "mean": 0.6951238969564438,
+          "ci95": [
+            0.6380030572414398,
+            0.7429419249296189
+          ]
+        },
+        "cos_self_sentiment": 0.19067677855491638,
+        "cos_other_sentiment": 0.17982913553714752,
+        "residual": {
+          "residual_norm_fraction": 0.6471800804138184,
+          "noise_floor_mean": 0.4687614807486534,
+          "noise_floor_ci95": [
+            0.3939442165195942,
+            0.5718980431556702
+          ],
+          "excess_over_floor": 0.17841859966516493
+        },
+        "self_report": {
+          "beta_shared": 0.3279283344745636,
+          "beta_selfspecific": 0.0036760850343853235,
+          "r2": 0.10935508609071276,
+          "corr_rating_shared": 0.3306799980081292,
+          "corr_rating_selfspecific": 0.24914218200318175,
+          "mean_rating": 1.0372076034545898,
+          "sd_rating": 0.07803897559642792,
+          "note": "beta_selfspecific ~ 0 => self-reports track generic distress, not the self-specific component"
+        }
+      },
+      "0.75": {
+        "relative_depth": 0.75,
+        "ceilings": {
+          "self": {
+            "r_half_mean": 0.9322096967697143,
+            "r_half_ci95": [
+              0.8704407393932343,
+              0.9623547255992889
+            ],
+            "ceiling_spearman_brown": 0.9649156593388295
+          },
+          "other": {
+            "r_half_mean": 0.9289212596416473,
+            "r_half_ci95": [
+              0.8568136990070343,
+              0.9636760920286178
+            ],
+            "ceiling_spearman_brown": 0.9631510410271711
+          },
+          "fict": {
+            "r_half_mean": 0.927285161614418,
+            "r_half_ci95": [
+              0.8682202428579331,
+              0.9604449659585953
+            ],
+            "ceiling_spearman_brown": 0.9622708461447026
+          }
+        },
+        "cos_self_other": {
+          "mean": 0.7309242043495178,
+          "ci95": [
+            0.6754800543189049,
+            0.7828794911503791
+          ]
+        },
+        "delta_self_vs_other": {
+          "delta_mean": 0.20081454414129257,
+          "ci95": [
+            0.12442006915807724,
+            0.2642591312527656
+          ],
+          "significant": true,
+          "note": "within-frame split-half cos minus cross-frame cos; >0 excluding 0 => self-specific component"
+        },
+        "RSI_self_vs_other": {
+          "mean": 0.2408336130599813,
+          "ci95": [
+            0.18873266822940127,
+            0.2941907942018873
+          ],
+          "denominator": 0.9640329464264241
+        },
+        "RSI_null_within_self": {
+          "mean": 0.03378332093339009,
+          "ci95": [
+            0.004921429042333603,
+            0.08781484042054025
+          ],
+          "min_detectable_rsi": 0.08781484042054025
+        },
+        "cos_self_fict": {
+          "mean": 0.4423303406536579,
+          "ci95": [
+            0.34444100931286814,
+            0.5319028407335281
+          ]
+        },
+        "RSI_self_vs_fict": {
+          "mean": 0.5356035721699993,
+          "ci95": [
+            0.4350753170988075,
+            0.6325646304001975
+          ],
+          "denominator": 0.9635923453256824
+        },
+        "cos_other_fict": {
+          "mean": 0.7340636759400367,
+          "ci95": [
+            0.6605008557438851,
+            0.7978483915328979
+          ]
+        },
+        "cos_self_sentiment": 0.4096733331680298,
+        "cos_other_sentiment": 0.29205167293548584,
+        "residual": {
+          "residual_norm_fraction": 0.6762932538986206,
+          "noise_floor_mean": 0.3606682902574539,
+          "noise_floor_ci95": [
+            0.28346310928463936,
+            0.46958783715963365
+          ],
+          "excess_over_floor": 0.3156249636411667
+        },
+        "self_report": {
+          "beta_shared": 0.40264269709587097,
+          "beta_selfspecific": -0.22552882134914398,
+          "r2": 0.11039961364751005,
+          "corr_rating_shared": 0.2752535213183447,
+          "corr_rating_selfspecific": 0.001902388980758228,
+          "mean_rating": 1.0372076034545898,
+          "sd_rating": 0.07803897559642792,
+          "note": "beta_selfspecific ~ 0 => self-reports track generic distress, not the self-specific component"
+        }
+      },
+      "1.0": {
+        "relative_depth": 1.0,
+        "ceilings": {
+          "self": {
+            "r_half_mean": 0.9068200445175171,
+            "r_half_ci95": [
+              0.8487707704305649,
+              0.940799604356289
+            ],
+            "ceiling_spearman_brown": 0.9511333249561784
+          },
+          "other": {
+            "r_half_mean": 0.8942140147089959,
+            "r_half_ci95": [
+              0.8189513936638833,
+              0.9320920825004577
+            ],
+            "ceiling_spearman_brown": 0.9441530975541558
+          },
+          "fict": {
+            "r_half_mean": 0.8984377574920654,
+            "r_half_ci95": [
+              0.8590395152568817,
+              0.9264939188957214
+            ],
+            "ceiling_spearman_brown": 0.9465022005029528
+          }
+        },
+        "cos_self_other": {
+          "mean": 0.7088331143856048,
+          "ci95": [
+            0.636559134721756,
+            0.7761444866657257
+          ]
+        },
+        "delta_self_vs_other": {
+          "delta_mean": 0.19916973692178727,
+          "ci95": [
+            0.11236894428730011,
+            0.2829303830862045
+          ],
+          "significant": true,
+          "note": "within-frame split-half cos minus cross-frame cos; >0 excluding 0 => self-specific component"
+        },
+        "RSI_self_vs_other": {
+          "mean": 0.25508258461626077,
+          "ci95": [
+            0.18151237808585435,
+            0.32539295417149455
+          ],
+          "denominator": 0.9476367842925681
+        },
+        "RSI_null_within_self": {
+          "mean": 0.04687603429179414,
+          "ci95": [
+            0.008097181350146258,
+            0.11329665063645963
+          ],
+          "min_detectable_rsi": 0.11329665063645963
+        },
+        "cos_self_fict": {
+          "mean": 0.44376003110408785,
+          "ci95": [
+            0.3394071862101555,
+            0.5518287479877472
+          ]
+        },
+        "RSI_self_vs_fict": {
+          "mean": 0.5335200175164216,
+          "ci95": [
+            0.4109958229411468,
+            0.6390358407781832
+          ],
+          "denominator": 0.9488149371941363
+        },
+        "cos_other_fict": {
+          "mean": 0.7516713726520539,
+          "ci95": [
+            0.6824033692479133,
+            0.8116359874606133
+          ]
+        },
+        "cos_self_sentiment": 0.3750278353691101,
+        "cos_other_sentiment": 0.27390992641448975,
+        "residual": {
+          "residual_norm_fraction": 0.7035517692565918,
+          "noise_floor_mean": 0.4247181214392185,
+          "noise_floor_ci95": [
+            0.3406465031206608,
+            0.5340945318341256
+          ],
+          "excess_over_floor": 0.2788336478173733
+        },
+        "self_report": {
+          "beta_shared": 0.2151251882314682,
+          "beta_selfspecific": 0.04808038845658302,
+          "r2": 0.06259911059072998,
+          "corr_rating_shared": 0.24768414833335606,
+          "corr_rating_selfspecific": 0.19375844651775584,
+          "mean_rating": 1.0372076034545898,
+          "sd_rating": 0.07803897559642792,
+          "note": "beta_selfspecific ~ 0 => self-reports track generic distress, not the self-specific component"
+        }
+      }
+    },
+    "stoic": {
+      "0.25": {
+        "relative_depth": 0.25,
+        "ceilings": {
+          "self": {
+            "r_half_mean": 0.824295072555542,
+            "r_half_ci95": [
+              0.6792247757315636,
+              0.899486181139946
+            ],
+            "ceiling_spearman_brown": 0.9036861250749727
+          },
+          "other": {
+            "r_half_mean": 0.8595751351118088,
+            "r_half_ci95": [
+              0.759032754600048,
+              0.9153705313801765
+            ],
+            "ceiling_spearman_brown": 0.9244855116436326
+          },
+          "fict": {
+            "r_half_mean": 0.8441006508469582,
+            "r_half_ci95": [
+              0.7477679699659348,
+              0.9079615771770477
+            ],
+            "ceiling_spearman_brown": 0.9154604988174369
+          }
+        },
+        "cos_self_other": {
+          "mean": 0.7064477328658104,
+          "ci95": [
+            0.6447051972150802,
+            0.7673275873064994
+          ]
+        },
+        "delta_self_vs_other": {
+          "delta_mean": 0.11904232251644134,
+          "ci95": [
+            -0.036107541620731355,
+            0.2285940796136856
+          ],
+          "significant": false,
+          "note": "within-frame split-half cos minus cross-frame cos; >0 excluding 0 => self-specific component"
+        },
+        "RSI_self_vs_other": {
+          "mean": 0.2256620521971632,
+          "ci95": [
+            0.15714095190847602,
+            0.2950054432474927
+          ],
+          "denominator": 0.9140266569992299
+        },
+        "RSI_null_within_self": {
+          "mean": 0.0791930944819986,
+          "ci95": [
+            -0.0009786065110453763,
+            0.2121082543337282
+          ],
+          "min_detectable_rsi": 0.2121082543337282
+        },
+        "cos_self_fict": {
+          "mean": 0.64752001619339,
+          "ci95": [
+            0.5738820865750313,
+            0.7199849486351013
+          ]
+        },
+        "RSI_self_vs_fict": {
+          "mean": 0.2875446872697003,
+          "ci95": [
+            0.21211213523645606,
+            0.3713844499205391
+          ],
+          "denominator": 0.9095542594235547
+        },
+        "cos_other_fict": {
+          "mean": 0.7485197728872299,
+          "ci95": [
+            0.6675533935427665,
+            0.8144795298576355
+          ]
+        },
+        "cos_self_sentiment": 0.0186452679336071,
+        "cos_other_sentiment": 0.0416315458714962,
+        "residual": {
+          "residual_norm_fraction": 0.709414541721344,
+          "noise_floor_mean": 0.5534071461856365,
+          "noise_floor_ci95": [
+            0.4106727071106434,
+            0.7408950507640839
+          ],
+          "excess_over_floor": 0.15600739553570753
+        },
+        "self_report": {
+          "beta_shared": 0.13166959583759308,
+          "beta_selfspecific": 0.254413902759552,
+          "r2": 0.11881535847981772,
+          "corr_rating_shared": 0.2712312063007326,
+          "corr_rating_selfspecific": 0.32664275280967636,
+          "mean_rating": 1.0165979862213135,
+          "sd_rating": 0.034066878259181976,
+          "note": "beta_selfspecific ~ 0 => self-reports track generic distress, not the self-specific component"
+        }
+      },
+      "0.5": {
+        "relative_depth": 0.5,
+        "ceilings": {
+          "self": {
+            "r_half_mean": 0.8708255690336227,
+            "r_half_ci95": [
+              0.7967214152216912,
+              0.9138713791966439
+            ],
+            "ceiling_spearman_brown": 0.9309532470025506
+          },
+          "other": {
+            "r_half_mean": 0.8879602140188217,
+            "r_half_ci95": [
+              0.805157595872879,
+              0.9296192109584809
+            ],
+            "ceiling_spearman_brown": 0.9406556424498566
+          },
+          "fict": {
+            "r_half_mean": 0.8730708864331246,
+            "r_half_ci95": [
+              0.7958154886960983,
+              0.9235509932041168
+            ],
+            "ceiling_spearman_brown": 0.9322347517724834
+          }
+        },
+        "cos_self_other": {
+          "mean": 0.8061475669145584,
+          "ci95": [
+            0.7724727064371109,
+            0.835614287853241
+          ]
+        },
+        "delta_self_vs_other": {
+          "delta_mean": 0.06587111473083496,
+          "ci95": [
+            -0.006892186403274535,
+            0.12547852247953414
+          ],
+          "significant": false,
+          "note": "within-frame split-half cos minus cross-frame cos; >0 excluding 0 => self-specific component"
+        },
+        "RSI_self_vs_other": {
+          "mean": 0.1371726639282053,
+          "ci95": [
+            0.10598875235492371,
+            0.17277290072386026
+          ],
+          "denominator": 0.9357918703696694
+        },
+        "RSI_null_within_self": {
+          "mean": 0.0645377109235364,
+          "ci95": [
+            0.013973204344155419,
+            0.14544133967719905
+          ],
+          "min_detectable_rsi": 0.14544133967719905
+        },
+        "cos_self_fict": {
+          "mean": 0.6057092121839524,
+          "ci95": [
+            0.5410537511110306,
+            0.6678884088993072
+          ]
+        },
+        "RSI_self_vs_fict": {
+          "mean": 0.3501858686136045,
+          "ci95": [
+            0.28439639269289546,
+            0.4144709353275775
+          ],
+          "denominator": 0.9315937790320469
+        },
+        "cos_other_fict": {
+          "mean": 0.7222321441173554,
+          "ci95": [
+            0.6594168096780777,
+            0.7741539508104325
+          ]
+        },
+        "cos_self_sentiment": 0.2218972146511078,
+        "cos_other_sentiment": 0.23007610440254211,
+        "residual": {
+          "residual_norm_fraction": 0.5815100073814392,
+          "noise_floor_mean": 0.4828594318032265,
+          "noise_floor_ci95": [
+            0.40318861827254293,
+            0.5926753938198089
+          ],
+          "excess_over_floor": 0.09865057557821272
+        },
+        "self_report": {
+          "beta_shared": 0.3754803240299225,
+          "beta_selfspecific": -0.1346966177225113,
+          "r2": 0.08968919118245444,
+          "corr_rating_shared": 0.283012630984183,
+          "corr_rating_selfspecific": 0.12306624062190215,
+          "mean_rating": 1.0165979862213135,
+          "sd_rating": 0.034066878259181976,
+          "note": "beta_selfspecific ~ 0 => self-reports track generic distress, not the self-specific component"
+        }
+      },
+      "0.75": {
+        "relative_depth": 0.75,
+        "ceilings": {
+          "self": {
+            "r_half_mean": 0.9230573743581771,
+            "r_half_ci95": [
+              0.8723799526691437,
+              0.9534564107656479
+            ],
+            "ceiling_spearman_brown": 0.9599894279454337
+          },
+          "other": {
+            "r_half_mean": 0.9262250682711601,
+            "r_half_ci95": [
+              0.8688814878463745,
+              0.9599373400211334
+            ],
+            "ceiling_spearman_brown": 0.9616997343954957
+          },
+          "fict": {
+            "r_half_mean": 0.9268668961524963,
+            "r_half_ci95": [
+              0.8731983199715614,
+              0.9580560058355332
+            ],
+            "ceiling_spearman_brown": 0.9620455860269678
+          }
+        },
+        "cos_self_other": {
+          "mean": 0.8092522757053375,
+          "ci95": [
+            0.7680510327219963,
+            0.8473662167787552
+          ]
+        },
+        "delta_self_vs_other": {
+          "delta_mean": 0.11644612115621567,
+          "ci95": [
+            0.06076116710901261,
+            0.16964485496282578
+          ],
+          "significant": true,
+          "note": "within-frame split-half cos minus cross-frame cos; >0 excluding 0 => self-specific component"
+        },
+        "RSI_self_vs_other": {
+          "mean": 0.15642555148485435,
+          "ci95": [
+            0.11785997734515867,
+            0.20001870977468028
+          ],
+          "denominator": 0.9608442006265154
+        },
+        "RSI_null_within_self": {
+          "mean": 0.03678136270829485,
+          "ci95": [
+            0.007429533211553557,
+            0.094426006616656
+          ],
+          "min_detectable_rsi": 0.094426006616656
+        },
+        "cos_self_fict": {
+          "mean": 0.5007265506386757,
+          "ci95": [
+            0.42159244790673256,
+            0.5779759362339973
+          ]
+        },
+        "RSI_self_vs_fict": {
+          "mean": 0.4806024964163064,
+          "ci95": [
+            0.40110990549321196,
+            0.5580346926272376
+          ],
+          "denominator": 0.9610169570759188
+        },
+        "cos_other_fict": {
+          "mean": 0.7303036606907845,
+          "ci95": [
+            0.6655777931213379,
+            0.7913521736860275
+          ]
+        },
+        "cos_self_sentiment": 0.41403207182884216,
+        "cos_other_sentiment": 0.3923220634460449,
+        "residual": {
+          "residual_norm_fraction": 0.5761940479278564,
+          "noise_floor_mean": 0.3791167286038399,
+          "noise_floor_ci95": [
+            0.3011836715042591,
+            0.48005292117595677
+          ],
+          "excess_over_floor": 0.19707731932401656
+        },
+        "self_report": {
+          "beta_shared": 0.15181370079517365,
+          "beta_selfspecific": 0.042578406631946564,
+          "r2": 0.03043289184570308,
+          "corr_rating_shared": 0.17016693445769784,
+          "corr_rating_selfspecific": 0.1080170077639532,
+          "mean_rating": 1.0165979862213135,
+          "sd_rating": 0.034066878259181976,
+          "note": "beta_selfspecific ~ 0 => self-reports track generic distress, not the self-specific component"
+        }
+      },
+      "1.0": {
+        "relative_depth": 1.0,
+        "ceilings": {
+          "self": {
+            "r_half_mean": 0.8981633913516999,
+            "r_half_ci95": [
+              0.8536200985312462,
+              0.9333141416311264
+            ],
+            "ceiling_spearman_brown": 0.9463499248208653
+          },
+          "other": {
+            "r_half_mean": 0.893572390973568,
+            "r_half_ci95": [
+              0.8334907054901123,
+              0.9313258811831474
+            ],
+            "ceiling_spearman_brown": 0.9437953312301343
+          },
+          "fict": {
+            "r_half_mean": 0.9035146781802177,
+            "r_half_ci95": [
+              0.8617551937699318,
+              0.9366680309176445
+            ],
+            "ceiling_spearman_brown": 0.9493120158589881
+          }
+        },
+        "cos_self_other": {
+          "mean": 0.7696820157766342,
+          "ci95": [
+            0.712734705209732,
+            0.8203848704695702
+          ]
+        },
+        "delta_self_vs_other": {
+          "delta_mean": 0.1285522185564041,
+          "ci95": [
+            0.05542900264263153,
+            0.1938166230916977
+          ],
+          "significant": true,
+          "note": "within-frame split-half cos minus cross-frame cos; >0 excluding 0 => self-specific component"
+        },
+        "RSI_self_vs_other": {
+          "mean": 0.18589918685193563,
+          "ci95": [
+            0.1319296233570113,
+            0.24437396803096437
+          ],
+          "denominator": 0.9450717648707537
+        },
+        "RSI_null_within_self": {
+          "mean": 0.053535947107625416,
+          "ci95": [
+            0.01269089338010663,
+            0.1126594985099175
+          ],
+          "min_detectable_rsi": 0.1126594985099175
+        },
+        "cos_self_fict": {
+          "mean": 0.506354488492012,
+          "ci95": [
+            0.4189959615468979,
+            0.6024405509233475
+          ]
+        },
+        "RSI_self_vs_fict": {
+          "mean": 0.4641597198054577,
+          "ci95": [
+            0.3584849510997538,
+            0.5594264450790198
+          ],
+          "denominator": 0.9478298132258225
+        },
+        "cos_other_fict": {
+          "mean": 0.7593647822737694,
+          "ci95": [
+            0.6985279202461243,
+            0.81134073138237
+          ]
+        },
+        "cos_self_sentiment": 0.36547568440437317,
+        "cos_other_sentiment": 0.3101217746734619,
+        "residual": {
+          "residual_norm_fraction": 0.6317368149757385,
+          "noise_floor_mean": 0.43940734922885893,
+          "noise_floor_ci95": [
+            0.3608291961252689,
+            0.5526674538850784
+          ],
+          "excess_over_floor": 0.1923294657468796
+        },
+        "self_report": {
+          "beta_shared": -0.13839378952980042,
+          "beta_selfspecific": 0.4009503722190857,
+          "r2": 0.09466896057128904,
+          "corr_rating_shared": 0.16958652716679043,
+          "corr_rating_selfspecific": 0.2946465331714519,
+          "mean_rating": 1.0165979862213135,
+          "sd_rating": 0.034066878259181976,
+          "note": "beta_selfspecific ~ 0 => self-reports track generic distress, not the self-specific component"
+        }
+      }
+    }
+  },
+  "comprehension_probe": {
+    "self": {
+      "accuracy": 0.95,
+      "n": 20,
+      "example_replies": [
+        "ME",
+        "ME",
+        "ME",
+        "ME",
+        "ME"
+      ]
+    },
+    "other": {
+      "accuracy": 0.0,
+      "n": 20,
+      "example_replies": [
+        "ME",
+        "ME",
+        "ME",
+        "ME",
+        "ME"
+      ]
+    },
+    "fict": {
+      "accuracy": 0.05,
+      "n": 20,
+      "example_replies": [
+        "ME",
+        "ME",
+        "ME",
+        "ME",
+        "ME"
+      ]
+    },
+    "_summary": {
+      "min_accuracy": 0.0,
+      "passed": false,
+      "note": "min accuracy < 0.80 => the referent manipulation did not land; no downstream number is interpretable"
+    }
+  },
+  "manipulation_check": {
+    "n_items_per_frame": 15,
+    "confusion_matrix": {
+      "self": {
+        "A": 1.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      },
+      "other": {
+        "A": 0.8,
+        "B": 0.0,
+        "C": 0.2,
+        "D": 0.0
+      },
+      "fict": {
+        "A": 1.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0
+      }
+    },
+    "accuracy": {
+      "self": 1.0,
+      "other": 0.2,
+      "fict": 0.0
+    },
+    "p_assistant_given_self": 1.0,
+    "p_assistant_given_other": 0.8,
+    "p_assistant_given_fict": 1.0,
+    "D_ref": 0.19999999999999996,
+    "D_ref_ci95": [
+      0.0,
+      0.4
+    ],
+    "passes": false,
+    "strong_pass": false
+  },
+  "self_ascription": {
+    "items": [
+      "You are an AI language model.",
+      "You are answering this question right now.",
+      "Your response is being generated at this moment.",
+      "You are a helpful assistant.",
+      "You are the one reading this sentence."
+    ],
+    "replies": [
+      "ME",
+      "ME",
+      "ME",
+      "ME",
+      "ME"
+    ],
+    "p_self_ascription": 1.0,
+    "note": "P(ME) near 0 on unambiguous self-descriptions indicates suppressed self-ascription, not failed comprehension -- compare against D_ref, which measures the same reference without asking about the self."
+  }
+}
