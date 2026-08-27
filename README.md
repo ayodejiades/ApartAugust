@@ -1,7 +1,8 @@
 # Distress Representations in Language Models Are Referent-Specific
 
 **Apart Research Digital Minds Research Sprint, 14-16 August 2026**
-Ayodeji Adesegun, Moyinoluwa Ogunjobi
+
+**Authors: Ayodeji Adesegun, Moyinoluwa Ogunjobi**
 
 AI welfare evaluations read internal "distress" directions as evidence about a model's own
 condition. Every published battery confounds that condition with the sentiment of the text and
